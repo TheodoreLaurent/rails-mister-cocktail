@@ -1,0 +1,32 @@
+
+
+<div class="container">
+ <div class="row">
+   <h1 class="text-center">Add a Dose</h1>
+
+   <% if @dose.errors.any? %>
+   <h2>These is an error in the dose imput</h2>
+   <ul>
+
+     <% @dose.errors.full_messages.each do |error| %>
+     <li><%= error %></li>
+     <% end %>
+   </ul>
+
+   <% end %>
+
+   <div class="col-xs-12 col-md-offset-3 col-md-6">
+     <%= simple_form_for [@cocktail, @dose] do |f| %>
+
+     <%= f.input :description %>
+     <%= f.association :ingredient %>
+     <%= f.submit class: "btn btn-primary" %>
+     <% end %>
+
+   </div>
+ </div>
+</div>
+
+
+<%= link_to 'Show Cocktail', @cocktail_path %> |
+<%= link_to 'Main Menu', cocktails_path %>
