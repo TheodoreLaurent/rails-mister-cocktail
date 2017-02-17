@@ -43,6 +43,12 @@ gem 'rails-controller-testing'
 
 gem 'figaro'
 
+gem 'cloudinary', '1.1.0'
+
+gem "attachinary", github: "assembler/attachinary"
+gem "jquery-fileupload-rails"
+
+
 ruby '2.3.3'
 
 group :development, :test do
