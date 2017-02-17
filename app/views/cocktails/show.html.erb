@@ -10,7 +10,8 @@
    <strong>Ingredients:</strong>
    <ul>
      <% @cocktail.doses.each do |doses| %>
-     <li><%= doses.description %> of <%= doses.ingredient.name %></li>
+     <li class = "list-unstyled"><%= doses.description %> of <%= doses.ingredient.name %></li>
+     <%= link_to "Delete dose", dose_path(doses), method: :delete, data: {cnofrim: "are you sure bro?"} %>
      <% end %>
    </ul>
  </p>
@@ -19,5 +20,7 @@
  <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %> |
 
  <%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
+ <%= link_to 'Delete', cocktail_path(@cocktail) %> |
  <%= link_to 'Back', cocktails_path %>
+
 </div>

@@ -21,9 +21,9 @@ before_action :set_cocktail, only: [:new, :create]
 
   def destroy
     @dose = Dose.find(params[:id])
-    @dose.cocktail = @cocktail
+    @cocktail = @dose.cocktail
     @dose.destroy
-    redirect_to cocktail_dose_path(@dose)
+    redirect_to cocktail_path(@cocktail)
   end
 
 private
