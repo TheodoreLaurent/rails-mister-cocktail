@@ -41,6 +41,8 @@ gem "simple_form"
 gem "autoprefixer-rails"
 gem 'rails-controller-testing'
 
+gem 'figaro'
+
 ruby '2.3.3'
 
 group :development, :test do
